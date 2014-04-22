@@ -11,14 +11,29 @@
 <div class="row">
     <div class="col-md-4">
         <h2>Getting started</h2>
-        @*<p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
+        <p>
+            // Prepare the process to run
+            ProcessStartInfo start = new ProcessStartInfo();
+            // Enter in the command line arguments, everything you would enter after the executable name itself
+            start.Arguments = arguments;
+            // Enter the executable to run, including the complete path
+            start.FileName = ApplesToApples.exe;
+            // Do you want to show a console window?
+            start.WindowStyle = ProcessWindowStyle.Hidden;
+            start.CreateNoWindow = true;
+
+            // Run the external process & wait for it to finish
+            using (Process proc = Process.Start(start))
+            {
+            proc.WaitForExit();
+
+            // Retrieve the app's exit code
+            exitCode = proc.ExitCode;
+            }
         </p>
         <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
     </div>
-    <div class="col-md-4">
+    @*<div class="col-md-4">
         <h2>Get more libraries</h2>
         <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
         <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
